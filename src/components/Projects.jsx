@@ -51,9 +51,7 @@ export default function Projects() {
       <p className="section-label">Projects</p>
       <div className="section-divider" />
       <h2 className="section-title">Things I've built & analysed.</h2>
-      <p className={styles.note}>
-        ✦ Replace these with your real projects — add GitHub or live demo links for each.
-      </p>
+      
 
       <div className={styles.grid}>
         {projects.map((p, i) => (
