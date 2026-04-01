@@ -10,10 +10,10 @@ const projects = [
   },
   {
     tag: 'Python · Data Analysis',
-    name: 'Customer Churn Analysis',
-    desc: 'Used Python (Pandas, NumPy) to analyse customer behaviour data, identify churn patterns, and visualise findings. Produced a clean report with actionable recommendations.',
-    stack: ['Python', 'Pandas', 'Matplotlib', 'Jupyter'],
-    link: '#',
+    name: 'AI-powered-phishing-email-detector',
+    desc: 'AI-powered phishing email detector using Python, scikit-learn, and Streamlit.',
+    stack: ['Python', 'scikit-learn', 'streamlit'],
+    link: 'https://github.com/godwin105/AI-powered-phishing-email-detector',
   },
   {
     tag: 'SQL · MySQL',
