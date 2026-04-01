@@ -5,7 +5,7 @@ const contactLinks = [
   { icon: '☏', label: '+255 694 007 399', href: 'tel:+255694007399' },
   { icon: '☏', label: '+255 733 879 069', href: 'tel:+255733879069' },
   { icon: 'in', label: 'LinkedIn — Godwin Tairo', href: 'https://www.linkedin.com/in/godwin-tairo-4977a727b?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
-  { icon: '⌥', label: 'GitHub — @godwintairo', href: 'https://github.com/godwin105' },
+  { icon: '⌥', label: 'GitHub — godwin105', href: 'https://github.com/godwin105' },
 ]
 
 const personal = [
