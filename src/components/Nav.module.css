@@ -1,0 +1,99 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 4rem;
+  background: rgba(4, 19, 26, 0.8);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+.scrolled {
+  background: rgba(4, 19, 26, 0.95);
+  border-bottom-color: var(--border);
+}
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+.dot { color: var(--teal); }
+
+.links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.links a {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.links a:hover { color: var(--teal); }
+
+.cta {
+  padding: 0.5rem 1.4rem;
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 4px;
+}
+.cta:hover { background: var(--teal); color: var(--bg); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 1px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0; right: 0;
+  background: rgba(7, 30, 41, 0.98);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  gap: 1.25rem;
+}
+.mobileMenu a {
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.mobileMenu a:hover { color: var(--teal); }
+
+@media (max-width: 900px) {
+  .nav { padding: 1rem 1.5rem; }
+  .links, .cta { display: none; }
+  .hamburger { display: flex; }
+}
