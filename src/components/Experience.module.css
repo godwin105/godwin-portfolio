@@ -23,8 +23,6 @@
 }
 .item:hover .dot { background: var(--teal); }
 
-.body {}
-
 .header {
   display: flex;
   justify-content: space-between;
