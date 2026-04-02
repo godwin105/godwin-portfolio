@@ -7,6 +7,7 @@
   align-items: center;
   padding: 1.25rem 4rem;
   background: rgba(4, 19, 26, 0.8);
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s, background 0.3s;
@@ -76,6 +77,7 @@
   top: 100%;
   left: 0; right: 0;
   background: rgba(7, 30, 41, 0.98);
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   display: flex;
