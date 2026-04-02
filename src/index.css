@@ -49,7 +49,7 @@ a { color: inherit; text-decoration: none; }
 .section-label::before {
   content: '';
   width: 2rem;
-  height: 3px;
+  height: 1px;
   background: var(--teal);
 }
 
