@@ -18,7 +18,7 @@ const education = [
 export default function About() {
   return (
     <section className={styles.about} id="about">
-      <p className="section-label">About me</p>
+      <p>About me</p>
       
 
       <div className={styles.grid}>
