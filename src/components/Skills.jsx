@@ -47,7 +47,7 @@ export default function Skills() {
   return (
     <section className={styles.skills} id="skills">
       <p className="section-label">Technical skills</p>
-      <div className="section-divider" />
+      
       <h2 className="section-title">My data toolkit.</h2>
 
       <div className={styles.layout}>
