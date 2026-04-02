@@ -1,6 +1,6 @@
 import styles from './Hero.module.css'
 
-const tools = ['Power BI', 'Python · Pandas · NumPy', 'SQL · MySQL', 'Excel (Advanced)', 'R · Stata', 'Figma']
+const tools = ['Power BI', 'Python · Pandas · NumPy', 'SQL · MySQL', 'Excel', 'R · Stata', 'Figma']
 
 const stats = [
   { num: '4', label: 'Internships' },
@@ -47,8 +47,7 @@ export default function Hero() {
 
         <p className={styles.desc}>
           Computer Engineering student at the University of Dar es Salaam — specialising
-          in transforming raw data into clear insights using Python, Power BI, SQL and Excel.
-          Based in Tanzania, building data solutions that matter.
+          in transforming raw data into clear insights using Python, Power BI, SQL and Excel. Building data solutions that matter.
         </p>
 
         <div className={styles.tools}>

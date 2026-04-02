@@ -28,7 +28,7 @@ export default function About() {
           <p className={styles.text}>
             I'm Godwin Innocent Tairo, a Computer Engineering and IT student at the
             University of Dar es Salaam. My focus is data analysis — collecting, cleaning,
-            visualising, and interpreting data to drive better decisions.
+            visualising and interpreting data to drive better decisions.
           </p>
           <p className={styles.text}>
             Through four practical training placements in FinTech, software development, and

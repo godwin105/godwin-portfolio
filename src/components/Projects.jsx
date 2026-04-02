@@ -1,19 +1,20 @@
 import styles from './Projects.module.css'
 
 const projects = [
-  {
-    tag: 'Power BI Dashboard',
-    name: 'Sales Performance Tracker',
-    desc: 'An interactive Power BI dashboard analysing monthly sales trends, regional performance, and KPIs for a retail business. Includes drill-through reports and dynamic slicers.',
-    stack: ['Power BI', 'Excel', 'DAX'],
-    link: '#',
-  },
+  
   {
     tag: 'Python · Data Analysis',
     name: 'AI-powered-phishing-email-detector',
     desc: 'AI-powered phishing email detector using Python, scikit-learn, and Streamlit.',
     stack: ['Python', 'scikit-learn', 'streamlit'],
     link: 'https://github.com/godwin105/AI-powered-phishing-email-detector',
+  },
+  {
+    tag: 'React · Frontend',
+    name: 'This Portfolio Website',
+    desc: 'Designed and built this personal portfolio using React and Vite — showcasing data projects, skills and experience. Fully responsive, dark-themed, and deployed on Vercel.',
+    stack: ['React', 'Vite', 'CSS Modules'],
+    link: 'https://godwintairo.vercel.app',
   },
   {
     tag: 'SQL · MySQL',
@@ -37,10 +38,10 @@ const projects = [
     link: '#',
   },
   {
-    tag: 'React · Frontend',
-    name: 'This Portfolio Website',
-    desc: 'Designed and built this personal portfolio using React and Vite — showcasing data projects, skills and experience. Fully responsive, dark-themed, and deployed on Vercel.',
-    stack: ['React', 'Vite', 'CSS Modules'],
+    tag: 'Power BI Dashboard',
+    name: 'Sales Performance Tracker',
+    desc: 'An interactive Power BI dashboard analysing monthly sales trends, regional performance, and KPIs for a retail business. Includes drill-through reports and dynamic slicers.',
+    stack: ['Power BI', 'Excel', 'DAX'],
     link: '#',
   },
 ]
@@ -50,7 +51,7 @@ export default function Projects() {
     <section className={styles.projects} id="projects">
       <p className="section-label">Projects</p>
       <div className="section-divider" />
-      <h2 className="section-title">Things I've built & analysed.</h2>
+      <h2 className="section-title">Things I've built & analysed. And still working on more.</h2>
       
 
       <div className={styles.grid}>

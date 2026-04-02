@@ -3,7 +3,7 @@ import styles from './Skills.module.css'
 const groups = [
   {
     title: 'Data Analysis & Statistics',
-    chips: ['Python (Pandas)', 'NumPy', 'R', 'Stata', 'Statistical Analysis', 'Data Cleaning'],
+    chips: ['Python', 'NumPy', 'R', 'Stata', 'Statistical Analysis', 'Data Cleaning'],
     core: true,
   },
   {
@@ -18,7 +18,7 @@ const groups = [
   },
   {
     title: 'Spreadsheets',
-    chips: ['Excel (Advanced)', 'Pivot Tables', 'Data Analysis ToolPak', 'Google Sheets'],
+    chips: ['Excel', 'Pivot Tables', 'Data Analysis ToolPak', 'Google Sheets'],
   },
   {
     title: 'Design & Development',

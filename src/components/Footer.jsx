@@ -8,7 +8,7 @@ export default function Footer() {
       <span className={styles.copy}>
         © {new Date().getFullYear()} Godwin Innocent Tairo · Data Analyst · Dar es Salaam, Tanzania
       </span>
-      <button className={styles.name} onClick={scrollTop} title="Back to top">GT.</button>
+      <button className={styles.name} onClick={scrollTop} title="Back to top">GT</button>
     </footer>
   )
 }

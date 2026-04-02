@@ -34,7 +34,7 @@ export default function Contact() {
           <div className="section-divider" />
           <h2 className={styles.title}>Let's work<br />with data.</h2>
           <p className={styles.desc}>
-            Looking for a data analyst who can dig into your numbers, build clear dashboards,
+            Looking for a data analyst who can dig into your numbers, build clear dashboards
             and tell you what the data actually means? Let's talk.
           </p>
           <div className={styles.links}>
