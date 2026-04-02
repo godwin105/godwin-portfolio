@@ -19,14 +19,17 @@ const groups = [
   {
     title: 'Spreadsheets',
     chips: ['Excel', 'Pivot Tables', 'Data Analysis ToolPak', 'Google Sheets'],
+    core: true,
   },
   {
     title: 'Design & Development',
     chips: ['Figma (UI/UX)', 'React', 'HTML / CSS', 'QA & Testing'],
+    core: true,
   },
   {
     title: 'Soft Skills',
     chips: ['Communication', 'Problem Solving', 'Teamwork', 'Time Management', 'Leadership'],
+    core: true,
   },
 ]
 
