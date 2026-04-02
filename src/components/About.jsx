@@ -19,7 +19,7 @@ export default function About() {
   return (
     <section className={styles.about} id="about">
       <p className="section-label">About me</p>
-      <div className="section-divider" />
+      
 
       <div className={styles.grid}>
         {/* Left — bio */}
