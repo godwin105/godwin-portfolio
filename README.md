@@ -1,6 +1,6 @@
 # Godwin Tairo — Portfolio Website
 
-A personal portfolio for Godwin Innocent Tairo, Data Analyst based in Dar es Salaam, Tanzania.
+My personal portfolio - Godwin Innocent Tairo, Data Analyst based in Dar es Salaam, Tanzania.
 
 Built with **React + Vite** and CSS Modules. Dark, minimal aesthetic.
 
