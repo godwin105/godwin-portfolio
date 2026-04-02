@@ -5,7 +5,7 @@ const info = [
   { key: 'Email', val: 'godwintairo0@gmail.com' },
   { key: 'Phone', val: '+255 694 007 399' },
   { key: 'Languages', val: 'English & Swahili' },
-  { key: 'Focus areas', val: 'Data Analysis, Visualisation, Reporting' },
+  { key: 'Focus areas', val: 'Data Analysis, Auditing, Visualisation, Reporting' },
   { key: 'Availability', val: 'Open to full-time & internship roles' },
 ]
 
