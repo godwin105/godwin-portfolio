@@ -49,9 +49,16 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right — education */}
-        <div>
-          <p className="section-label" style={{ marginBottom: '1.5rem' }}>Education</p>
+        {/* Right — photo + education */}
+<div>
+  <div className={styles.photoWrap}>
+    <img src="/profile.jpeg" alt="Godwin Tairo" className={styles.photo} />
+    <div className={styles.photoBadge}>
+      <span className={styles.badgeDot} />
+      Open to opportunities
+    </div>
+  </div>
+  <p className="section-label" style={{ marginBottom: '1.5rem' }}>Education</p>
           {education.map(e => (
             <div key={e.year} className={styles.eduCard}>
               <p className={styles.eduYear}>{e.year}</p>
