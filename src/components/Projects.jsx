@@ -17,11 +17,11 @@ const projects = [
     link: 'https://godwintairo.vercel.app',
   },
   {
-    tag: 'SQL · MySQL',
-    name: 'FinTech Database Queries',
-    desc: 'Designed and ran complex SQL queries on a financial transactions database to surface insights on payment trends, fraud patterns, and customer segment analysis.',
-    stack: ['MySQL', 'SQL', 'Excel'],
-    link: '#',
+    tag: 'Python · Backend',
+    name: 'Sales Data Analysis System',
+    desc: 'A web based sales data analysis system built with Python, HTML, CSS, and MySQL. It allows users to upload sales data, run SQL queries for insights, and visualize results with charts. The backend handles data processing and query execution, while the frontend provides an intuitive interface for users to interact with their sales data.',
+    stack: ['Python', 'HTML', 'CSS', 'MySQL'],
+    link: 'https://github.com/godwin105/Sales-Data-Analysis-System.git',
   },
   {
     tag: 'Excel · Statistical Analysis',
@@ -32,16 +32,23 @@ const projects = [
   },
   {
     tag: 'Figma · UI/UX',
-    name: 'Data Analytics Dashboard UI',
+    name: 'Sales Data Analysis System UI',
     desc: 'Designed a high-fidelity Figma prototype of a web-based analytics dashboard for a small business — focusing on clean data presentation and intuitive navigation.',
     stack: ['Figma', 'UI/UX Design', 'Prototyping'],
-    link: '#',
+    link: 'https://www.figma.com/proto/Hnejot1PG37DzWcyGb0Yh6/Sales-Data-Analysis-System?page-id=0%3A1&node-id=106-460&p=f&viewport=180%2C151%2C0.25&t=iEMDqC3Pj1HPZxBm-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=41%3A6',
   },
   {
     tag: 'Power BI Dashboard',
     name: 'Sales Performance Tracker',
     desc: 'An interactive Power BI dashboard analysing monthly sales trends, regional performance, and KPIs for a retail business. Includes drill-through reports and dynamic slicers.',
     stack: ['Power BI', 'Excel', 'DAX'],
+    link: '#',
+  },
+  {
+    tag: 'SQL · MySQL',
+    name: 'FinTech Database Queries',
+    desc: 'Designed and ran complex SQL queries on a financial transactions database to surface insights on payment trends, fraud patterns, and customer segment analysis.',
+    stack: ['MySQL', 'SQL', 'Excel'],
     link: '#',
   },
 ]
