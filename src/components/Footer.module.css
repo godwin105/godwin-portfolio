@@ -6,7 +6,33 @@
   border-top: 1px solid var(--border);
   background: var(--bg);
 }
+
 .copy { font-size: 0.75rem; color: var(--muted); }
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.socialLink:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: rgba(13, 212, 176, 0.08);
+}
+
 .name {
   font-family: 'Syne', sans-serif;
   font-size: 0.9rem;
@@ -21,9 +47,9 @@
 
 @media (max-width: 900px) {
   .footer {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.25rem;
     text-align: center;
   }
 }

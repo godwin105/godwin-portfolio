@@ -10,7 +10,7 @@ const projects = [
     date: 'Apr 2026 – Present',
   },
   {
-    tag: 'React · Blockchain · Python',
+    tag: 'React · Blockchain · Python . Web3',
     name: 'Shelby Proof-of-Data',
     desc: 'A decentralized tool that allows users to prove a file existed at a specific time by storing it on Shelby\'s decentralized storage network and recording its cryptographic hash and timestamp on the Aptos blockchain.',
     stack: ['React 18', 'Vite', 'Tailwind CSS', 'Aptos', 'Shelby SDK', 'FastAPI', 'PostgreSQL', 'Vercel'],
@@ -28,8 +28,8 @@ const projects = [
   {
     tag: 'Python · Flask · React',
     name: 'Sales Data Analysis System',
-    desc: 'A web-based system that helps small and local businesses in Tanzania record stock, sales and expenses and visualise their performance through interactive analytics — replacing manual bookkeeping with simple, accessible digital workflows.',
-    stack: ['Python', 'Flask', 'SQLAlchemy', 'MySQL', 'React', 'Tailwind CSS', 'Chart.js', 'AzamPay'],
+    desc: 'A web-based system that helps small and local businesses in Tanzania record stock, sales and expenses and visualise their performance through interactive analytics replacing manual bookkeeping with simple, accessible digital workflows.',
+    stack: ['Python', 'Flask', 'SQLAlchemy', 'MySQL', 'React', 'Tailwind CSS', 'Chart.js', 'Clickpesa API'],
     link: 'https://sales-data-analysis-system-5e6bi.ondigitalocean.app/',
     date: 'Dec 2025 – Present',
   },

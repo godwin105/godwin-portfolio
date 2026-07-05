@@ -43,7 +43,7 @@ const experiences = [
   {
     role: 'Software Engineering Intern',
     duration: 'Jul 2023 – Sep 2023',
-    org: 'College of ICT (CoICT) FINHUB — UDICTI',
+    org: 'College of Information and Communication Technology (CoICT) FINHUB — UDICTI',
     tags: ['FinTech', 'React', 'JavaScript', 'HTML/CSS', 'Figma'],
     bullets: [
       'Explored FinTech problem-solving techniques, with a focus on innovation and digital financial solutions.',

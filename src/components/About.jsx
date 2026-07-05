@@ -53,15 +53,15 @@ export default function About() {
         <div>
           <h2 className="section-title">Analyst. Developer.<br />Audit trainee.</h2>
           <p className={styles.text}>
-            I'm Godwin Innocent Tairo — a Computer Engineering and IT student at the
+            I'm Godwin Innocent Tairo, a Computer Engineering and IT student at the
             University of Dar es Salaam working across three disciplines: data analysis,
-            software development, and auditing. I turn raw data into decisions, build
-            full-stack products, and apply compliance practices in financial services.
+            software development and auditing. I turn raw data into decisions, build
+            full-stack products and apply compliance practices in financial services.
           </p>
           <p className={styles.text}>
             Through four practical training placements in FinTech, software development, and
             financial services, I've worked with Power BI, Excel, Python, MySQL, R and Stata
-            on the data side — and React, TypeScript, Tailwind CSS, FastAPI and PostgreSQL on
+            on the data side and React, TypeScript, Tailwind CSS, FastAPI and PostgreSQL on
             the development side. At iTrust Finance, I applied KYC verification, data
             validation and CRM-based auditing workflows.
           </p>

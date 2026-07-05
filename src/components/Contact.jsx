@@ -2,8 +2,9 @@ import { useState } from 'react'
 import styles from './Contact.module.css'
 
 const socialLinks = [
-  { icon: 'in', label: 'LinkedIn — Godwin Tairo', href: 'https://www.linkedin.com/in/godwin-tairo-4977a727b?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
-  { icon: '⌥', label: 'GitHub — godwin105', href: 'https://github.com/godwin105' },
+  { icon: 'in', label: 'LinkedIn', href: 'https://www.linkedin.com/in/godwin-tairo-4977a727b?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
+  { icon: '⌥', label: 'GitHub', href: 'https://github.com/godwin105' },
+  { icon: '𝕏', label: 'X / Twitter', href: 'https://x.com/GrowthGrid_105' },
 ]
 
 export default function Contact() {
@@ -44,7 +45,7 @@ export default function Contact() {
           <div className="section-divider" />
           <h2 className={styles.title}>Let's work<br />together.</h2>
           <p className={styles.desc}>
-            Need a data analyst, a developer, or someone who can do both?
+            Need a data analyst, a developer or someone who can do both?
             I'm open to internships, freelance projects and full-time roles.
             Send a message and I'll get back to you.
           </p>

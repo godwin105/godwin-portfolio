@@ -46,8 +46,8 @@ export default function Hero() {
         </p>
 
         <p className={styles.desc}>
-          Computer Engineering student at the University of Dar es Salaam — transforming raw data
-          into clear insights, building full-stack web applications, and applying auditing &amp; compliance
+          Computer Engineering student at the University of Dar es Salaam transforming raw data
+          into clear insights, building full-stack web applications and applying auditing &amp; compliance
           practices across FinTech and financial services.
         </p>
 
