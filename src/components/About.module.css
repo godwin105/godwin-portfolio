@@ -141,14 +141,53 @@
   letter-spacing: 0.05em;
 }
 
+/* ── Interests ── */
+.interestsSection {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.interestsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.interestCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.25rem 1rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: default;
+}
+.interestCard:hover { border-color: var(--gold); transform: translateY(-3px); }
+
+.interestEmoji { font-size: 1.6rem; line-height: 1; }
+
+.interestLabel {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
 @media (max-width: 1100px) {
   .eduGrid { grid-template-columns: repeat(2, 1fr); }
+  .interestsGrid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 900px) {
   .about { padding: 4rem 1.5rem; }
   .grid { grid-template-columns: 1fr; gap: 3rem; }
   .eduGrid { grid-template-columns: repeat(2, 1fr); }
+  .interestsGrid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 500px) {
   .eduGrid { grid-template-columns: 1fr; }
+  .interestsGrid { grid-template-columns: repeat(2, 1fr); }
 }

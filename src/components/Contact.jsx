@@ -6,22 +6,6 @@ const socialLinks = [
   { icon: '⌥', label: 'GitHub — godwin105', href: 'https://github.com/godwin105' },
 ]
 
-const personal = [
-  'Excellent written & verbal communication',
-  'Fluent in English and Swahili',
-  'Works independently and in teams',
-  'Strong analytical & problem-solving mindset',
-  'Leadership & time management',
-]
-
-const hobbies = [
-  'Continuously learning new data skills',
-  'Networking with professionals',
-  'Football & basketball',
-  'Community service',
-  'Watching movies',
-]
-
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
@@ -53,16 +37,30 @@ export default function Contact() {
   return (
     <section className={styles.contact} id="contact">
       <div className={styles.inner}>
-        {/* Left */}
+
+        {/* Left — headline + links */}
         <div className={styles.left}>
           <p className="section-label">Contact</p>
           <div className="section-divider" />
-          <h2 className={styles.title}>Let's work<br />with data.</h2>
+          <h2 className={styles.title}>Let's work<br />together.</h2>
           <p className={styles.desc}>
-            Looking for a data analyst who can dig into your numbers, build clear dashboards
-            and tell you what the data actually means? Send me a message and I'll get back to you.
+            Need a data analyst, a developer, or someone who can do both?
+            I'm open to internships, freelance projects and full-time roles.
+            Send a message and I'll get back to you.
           </p>
 
+          <div className={styles.socials}>
+            {socialLinks.map((s, i) => (
+              <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                <div className={styles.icon}>{s.icon}</div>
+                <span>{s.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Right — form */}
+        <div className={styles.right}>
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
               <div className={styles.field}>
@@ -99,7 +97,7 @@ export default function Contact() {
                 name="message"
                 className={styles.textarea}
                 placeholder="Tell me about your project or opportunity..."
-                rows={5}
+                rows={6}
                 value={form.message}
                 onChange={handleChange}
                 required
@@ -121,32 +119,8 @@ export default function Contact() {
               {status === 'sending' ? 'Sending…' : 'Send Message'}
             </button>
           </form>
-
-          <div className={styles.socials}>
-            {socialLinks.map((s, i) => (
-              <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                <div className={styles.icon}>{s.icon}</div>
-                <span>{s.label}</span>
-              </a>
-            ))}
-          </div>
         </div>
 
-        {/* Right */}
-        <div className={styles.right}>
-          <div className={styles.card}>
-            <p className={styles.cardTitle}>Personal skills</p>
-            <div className={styles.items}>
-              {personal.map(p => <p key={p} className={styles.item}>{p}</p>)}
-            </div>
-          </div>
-          <div className={styles.card}>
-            <p className={styles.cardTitle}>Interests & hobbies</p>
-            <div className={styles.items}>
-              {hobbies.map(h => <p key={h} className={styles.item}>{h}</p>)}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

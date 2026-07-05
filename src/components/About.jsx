@@ -7,6 +7,15 @@ const info = [
   { key: 'Availability', val: 'Open to full-time & internship roles' },
 ]
 
+const interests = [
+  { emoji: '📊', label: 'Learning new data skills' },
+  { emoji: '🤝', label: 'Networking with professionals' },
+  { emoji: '⚽', label: 'Football & basketball' },
+  { emoji: '🌍', label: 'Community service' },
+  { emoji: '🎬', label: 'Watching movies' },
+  { emoji: '💻', label: 'Building side projects' },
+]
+
 const education = [
   {
     year: '2022 – Present',
@@ -88,6 +97,19 @@ export default function About() {
               <p className={styles.eduSchool}>{e.school}</p>
               <p className={styles.eduDegree}>{e.degree}</p>
               <p className={styles.eduNote}>{e.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Interests */}
+      <div className={styles.interestsSection}>
+        <p className="section-label" style={{ marginBottom: '1.25rem' }}>Interests & hobbies</p>
+        <div className={styles.interestsGrid}>
+          {interests.map(item => (
+            <div key={item.label} className={styles.interestCard}>
+              <span className={styles.interestEmoji}>{item.emoji}</span>
+              <span className={styles.interestLabel}>{item.label}</span>
             </div>
           ))}
         </div>
