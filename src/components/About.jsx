@@ -8,20 +8,39 @@ const info = [
 ]
 
 const education = [
-  { year: '2022 – Present', school: 'University of Dar es Salaam', degree: 'BSc Computer Engineering & Information Technology · Expected Nov 2026' },
-  { year: '2020 – 2022', school: 'Ndanda Boys High School', degree: 'Advanced Certificate of Secondary Education (ACSEE)' },
-  { year: '2016 – 2019', school: 'Dar es Salaam Secondary School', degree: 'Certificate of Secondary Education (CSEE)' },
-  { year: '2009 – 2015', school: 'Diamond Primary School', degree: 'Primary School Leaving Examination (PSLE)' },
+  {
+    year: '2022 – Present',
+    school: 'University of Dar es Salaam',
+    degree: 'BSc Computer Engineering & Information Technology',
+    note: 'Expected Nov 2026',
+  },
+  {
+    year: '2020 – 2022',
+    school: 'Ndanda Boys High School',
+    degree: 'Advanced Certificate of Secondary Education (ACSEE)',
+    note: 'Mtwara',
+  },
+  {
+    year: '2016 – 2019',
+    school: 'Dar es Salaam Secondary School',
+    degree: 'Certificate of Secondary Education (CSEE)',
+    note: 'Dar es Salaam',
+  },
+  {
+    year: '2009 – 2015',
+    school: 'Diamond Primary School',
+    degree: 'Primary School Leaving Examination (PSLE)',
+    note: 'Dar es Salaam',
+  },
 ]
 
 export default function About() {
   return (
     <section className={styles.about} id="about">
       <p className="section-label">About me</p>
-      
 
+      {/* Top — bio + photo */}
       <div className={styles.grid}>
-        {/* Left — bio */}
         <div>
           <h2 className="section-title">Analyst. Developer.<br />Audit trainee.</h2>
           <p className={styles.text}>
@@ -50,21 +69,25 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right — photo + education */}
-<div>
-  <div className={styles.photoWrap}>
-    <img src="/profile.jpeg" alt="Godwin Tairo" className={styles.photo} />
-    <div className={styles.photoBadge}>
-      <span className={styles.badgeDot} />
-      Open to opportunities
-    </div>
-  </div>
-  <p className="section-label" style={{ marginBottom: '1.5rem' }}>Education</p>
+        <div className={styles.photoWrap}>
+          <img src="/profile.jpeg" alt="Godwin Tairo" className={styles.photo} />
+          <div className={styles.photoBadge}>
+            <span className={styles.badgeDot} />
+            Open to opportunities
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom — education full width */}
+      <div className={styles.eduSection}>
+        <p className="section-label" style={{ marginBottom: '1.5rem' }}>Education</p>
+        <div className={styles.eduGrid}>
           {education.map(e => (
             <div key={e.year} className={styles.eduCard}>
               <p className={styles.eduYear}>{e.year}</p>
               <p className={styles.eduSchool}>{e.school}</p>
               <p className={styles.eduDegree}>{e.degree}</p>
+              <p className={styles.eduNote}>{e.note}</p>
             </div>
           ))}
         </div>

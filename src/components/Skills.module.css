@@ -1,20 +1,23 @@
 .skills { padding: 5rem 4rem; background: var(--bg); }
 
-.layout {
+.grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 3rem;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   margin-top: 1rem;
 }
 
-.chipCols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+.group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.75rem;
 }
 
-.group {}
+.full {
+  grid-column: 1 / -1;
+}
+
 .groupTitle {
   font-family: 'Syne', sans-serif;
   font-size: 0.78rem;
@@ -22,46 +25,32 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--teal);
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
 }
+
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
 .chip {
   padding: 0.35rem 0.9rem;
   font-size: 0.78rem;
-  border: 1px solid var(--border);
-  color: var(--muted);
-  background: var(--surface2);
-  transition: all 0.2s;
-  cursor: default;
+  border: 1px solid rgba(13, 212, 176, 0.3);
+  color: var(--teal);
+  background: rgba(13, 212, 176, 0.07);
   letter-spacing: 0.03em;
   border-radius: 4px;
+  cursor: default;
+  transition: all 0.2s;
 }
-.chip:hover { border-color: var(--teal); color: var(--teal); background: rgba(13,212,176,0.05); }
-.core {
-  border-color: rgba(13,212,176,0.3);
-  color: var(--teal);
-  background: rgba(13,212,176,0.07);
-}
+.chip:hover { background: rgba(13, 212, 176, 0.15); border-color: var(--teal); }
 
-/* Proficiency */
-.profCol { background: var(--surface); padding: 2rem; border: 1px solid var(--border); border-radius: 4px; }
-.bars { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.25rem; }
-.barRow { display: flex; flex-direction: column; gap: 0.35rem; }
-.barMeta { display: flex; justify-content: space-between; }
-.barLabel { font-size: 0.82rem; color: var(--muted); }
-.barLevel { font-size: 0.72rem; color: var(--teal); letter-spacing: 0.08em; }
-.track { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
-.fill {
-  height: 100%;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--teal-dim), var(--teal));
-  transition: width 1s ease;
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .full { grid-column: 1 / -1; }
 }
-
 @media (max-width: 900px) {
   .skills { padding: 4rem 1.5rem; }
-  .layout { grid-template-columns: 1fr; }
-  .chipCols { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  .full { grid-column: auto; }
 }
