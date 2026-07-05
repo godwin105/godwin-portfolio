@@ -3,7 +3,7 @@ import styles from './About.module.css'
 const info = [
   { key: 'Location', val: 'Dar es Salaam, Tanzania' },
   { key: 'Languages', val: 'English & Swahili' },
-  { key: 'Focus areas', val: 'Data Analysis, Visualisation, Reporting, FinTech' },
+  { key: 'Focus areas', val: 'Data Analysis · Software Development · Auditing' },
   { key: 'Availability', val: 'Open to full-time & internship roles' },
 ]
 
@@ -23,17 +23,19 @@ export default function About() {
       <div className={styles.grid}>
         {/* Left — bio */}
         <div>
-          <h2 className="section-title">Data analyst with an<br />engineering mindset.</h2>
+          <h2 className="section-title">Analyst. Developer.<br />Audit trainee.</h2>
           <p className={styles.text}>
-            I'm Godwin Innocent Tairo, a Computer Engineering and IT student at the
-            University of Dar es Salaam. My focus is data analysis — collecting, cleaning,
-            visualising and interpreting data to drive better decisions.
+            I'm Godwin Innocent Tairo — a Computer Engineering and IT student at the
+            University of Dar es Salaam working across three disciplines: data analysis,
+            software development, and auditing. I turn raw data into decisions, build
+            full-stack products, and apply compliance practices in financial services.
           </p>
           <p className={styles.text}>
             Through four practical training placements in FinTech, software development, and
-            financial services, I've worked with real business data across Power BI, Excel,
-            MySQL, Python, R and Stata. I also bring a solid foundation in UI/UX, which helps
-            me present insights in polished, visual formats.
+            financial services, I've worked with Power BI, Excel, Python, MySQL, R and Stata
+            on the data side — and React, TypeScript, Tailwind CSS, FastAPI and PostgreSQL on
+            the development side. At iTrust Finance, I applied KYC verification, data
+            validation and CRM-based auditing workflows.
           </p>
           <blockquote className={styles.quote}>
             "Good data tells a story. My job is to make that story impossible to ignore."

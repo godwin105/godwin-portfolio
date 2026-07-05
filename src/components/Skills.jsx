@@ -27,6 +27,11 @@ const groups = [
     core: true,
   },
   {
+    title: 'Auditing & Compliance',
+    chips: ['KYC Verification', 'Data Validation', 'CRM Systems', 'Compliance Documentation', 'Data Quality Management'],
+    core: true,
+  },
+  {
     title: 'Soft Skills',
     chips: ['Communication', 'Problem Solving', 'Teamwork', 'Time Management', 'Leadership'],
     core: true,
@@ -48,7 +53,7 @@ export default function Skills() {
     <section className={styles.skills} id="skills">
       <p className="section-label">Technical skills</p>
       
-      <h2 className="section-title">My data toolkit.</h2>
+      <h2 className="section-title">My toolkit — data, dev & audit.</h2>
 
       <div className={styles.layout}>
         {/* Skill chips */}
