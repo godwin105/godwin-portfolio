@@ -2,17 +2,16 @@ import styles from './About.module.css'
 
 const info = [
   { key: 'Location', val: 'Dar es Salaam, Tanzania' },
-  { key: 'Email', val: 'godwintairo0@gmail.com' },
-  { key: 'Phone', val: '+255 694 007 399' },
   { key: 'Languages', val: 'English & Swahili' },
-  { key: 'Focus areas', val: 'Data Analysis, Auditing, Visualisation, Reporting' },
+  { key: 'Focus areas', val: 'Data Analysis, Visualisation, Reporting, FinTech' },
   { key: 'Availability', val: 'Open to full-time & internship roles' },
 ]
 
 const education = [
-  { year: '2022 – Present', school: 'University of Dar es Salaam', degree: 'BSc Computer Engineering & Information Technology' },
+  { year: '2022 – Present', school: 'University of Dar es Salaam', degree: 'BSc Computer Engineering & Information Technology · Expected Nov 2026' },
   { year: '2020 – 2022', school: 'Ndanda Boys High School', degree: 'Advanced Certificate of Secondary Education (ACSEE)' },
-  { year: '2015 – 2019', school: 'Dar es Salaam Secondary School', degree: 'Certificate of Secondary Education (CSEE)' },
+  { year: '2016 – 2019', school: 'Dar es Salaam Secondary School', degree: 'Certificate of Secondary Education (CSEE)' },
+  { year: '2009 – 2015', school: 'Diamond Primary School', degree: 'Primary School Leaving Examination (PSLE)' },
 ]
 
 export default function About() {

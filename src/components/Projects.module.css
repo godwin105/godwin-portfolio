@@ -77,6 +77,13 @@
 .cardLink:hover { color: var(--teal); }
 .arrow { transition: transform 0.2s; }
 .cardLink:hover .arrow { transform: translateX(4px); }
+.cardLinkDisabled {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--border);
+  cursor: default;
+}
 
 @media (max-width: 1100px) {
   .grid { grid-template-columns: repeat(2, 1fr); }

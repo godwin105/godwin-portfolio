@@ -23,7 +23,7 @@ const groups = [
   },
   {
     title: 'Design & Development',
-    chips: ['Figma (UI/UX)', 'React', 'HTML / CSS', 'QA & Testing'],
+    chips: ['Figma (UI/UX)', 'React', 'TypeScript', 'HTML / CSS', 'Tailwind CSS', 'QA & Testing', 'Bug Reporting'],
     core: true,
   },
   {
