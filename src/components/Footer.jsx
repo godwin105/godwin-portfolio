@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="container">
         <div className={styles.top}>
           <p className={styles.note}>
-            Designed &amp; built by Godwin Tairo with React and a lot of data.
+            Designed &amp; built by Godwin Tairo.
           </p>
           <ul className={styles.socials}>
             {socials.map(({ label, href, Icon }) => (

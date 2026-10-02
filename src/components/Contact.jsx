@@ -4,6 +4,8 @@ import styles from './Contact.module.css'
 
 const empty = { name: '', email: '', message: '', _gotcha: '' }
 
+const services = ['Data analysis', 'Software development', 'IT systems & support', 'Audit & compliance']
+
 export default function Contact() {
   const [form, setForm] = useState(empty)
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
@@ -37,15 +39,20 @@ export default function Contact() {
       <div className="container">
         <p className="eyebrow reveal"><b>05</b>Contact</p>
         <h2 className={`${styles.title} reveal`}>
-          Have data that <br />needs a <em>story?</em>
+          Let's work <br /><em>together.</em>
         </h2>
+
+        <ul className={`${styles.services} reveal`} aria-label="What I can help with">
+          {services.map(s => <li key={s}>{s}</li>)}
+        </ul>
 
         <div className={styles.grid}>
           <div className={`${styles.left} reveal`}>
             <p className={styles.desc}>
-              Looking for a data analyst, a developer, or someone who can do both?
-              I'm open to full-time roles, internships and freelance projects. Send a
-              message and I'll get back to you.
+              Whether you need data analysed, a web app built, IT systems and networks
+              set up, or records checked for accuracy and compliance, I'm open to
+              full-time roles, internships and freelance projects. Send a message and
+              I'll get back to you.
             </p>
 
             <ul className={styles.socials}>

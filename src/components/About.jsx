@@ -5,10 +5,10 @@ import SectionHead from './SectionHead'
 import styles from './About.module.css'
 
 const statement =
-  "I'm a data analyst and software developer from Dar es Salaam. I clean, move and model data, then build the tools that make it useful. Today that means healthcare data operations. Before that, four internships across FinTech, software and financial services."
+  "I'm a data analyst and software developer from Dar es Salaam. I clean, move and model data, build the tools that make it useful, and keep the systems behind them running. Today that means healthcare data operations and IT. Before that, four internships across FinTech, software and financial services."
 
 // Words from the statement that get the serif-italic accent treatment.
-const accentWords = new Set(['useful.', 'healthcare'])
+const accentWords = new Set(['useful,', 'running.'])
 
 const info = [
   { key: 'Current role', val: `${currentRole.role}, ${currentRole.org}` },
@@ -64,7 +64,7 @@ export default function About() {
   return (
     <section className="section" id="about">
       <div className="container">
-        <SectionHead index="01" label="About" title={<>Data, <em>end to end.</em></>} />
+        <SectionHead index="01" label="About" title={<>Data, code <em>&amp; systems.</em></>} />
 
         <div className={styles.grid}>
           <div className={styles.photoMobile} data-print="hide">

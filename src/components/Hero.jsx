@@ -97,7 +97,7 @@ export default function Hero() {
             </p>
 
             <p className={`${styles.lede} ${styles.in}`} style={{ '--d': '400ms' }}>
-              I clean, move and model data, then build the tools that make it useful, across
+              I analyse data, build software, and keep IT systems and records running, across
               healthcare, FinTech and financial services. Computer Engineering student at the
               University of Dar es Salaam.
             </p>
