@@ -58,7 +58,7 @@ export default function Nav() {
     <header data-print="hide" className={`${styles.nav} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.menuOpen : ''}`}>
       <div className={styles.bar}>
         <a href="#home" className={styles.logo} onClick={e => go(e, 'home')}>
-          <span className={styles.mark} aria-hidden="true"><i /><i /><i /></span>
+          <img src="/avatar.webp" alt="" width="30" height="30" className={styles.avatar} />
           <span className={styles.logoText}>Godwin <span>Tairo</span><span className="sr-only">, back to top</span></span>
         </a>
 

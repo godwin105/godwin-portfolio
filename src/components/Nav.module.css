@@ -40,24 +40,16 @@
   font-weight: 600;
   letter-spacing: -0.02em;
 }
-.mark {
-  display: inline-flex;
-  align-items: flex-end;
-  gap: 2px;
-  height: 18px;
+.avatar {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1.5px var(--bg), 0 0 0 3px var(--accent);
+  transition: transform 0.4s var(--ease);
 }
-.mark i {
-  width: 4px;
-  border-radius: 1.5px;
-  background: var(--accent);
-  transition: height 0.4s var(--ease);
-}
-.mark i:nth-child(1) { height: 8px; opacity: 0.55; }
-.mark i:nth-child(2) { height: 13px; opacity: 0.8; }
-.mark i:nth-child(3) { height: 18px; }
-.logo:hover .mark i:nth-child(1) { height: 16px; }
-.logo:hover .mark i:nth-child(2) { height: 10px; }
-.logo:hover .mark i:nth-child(3) { height: 14px; }
+.logo:hover .avatar { transform: scale(1.08) rotate(-4deg); }
 .logoText { font-size: 0.98rem; }
 .logoText span { color: var(--muted); font-weight: 400; }
 
