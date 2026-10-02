@@ -1,14 +1,11 @@
 import { useState } from 'react'
+import { socials, ArrowRight, ArrowUpRight } from './icons'
 import styles from './Contact.module.css'
 
-const socialLinks = [
-  { icon: 'in', label: 'LinkedIn', href: 'https://www.linkedin.com/in/godwin-tairo-4977a727b?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
-  { icon: '⌥', label: 'GitHub', href: 'https://github.com/godwin105' },
-  { icon: '𝕏', label: 'X / Twitter', href: 'https://x.com/GrowthGrid_105' },
-]
+const empty = { name: '', email: '', message: '', _gotcha: '' }
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [form, setForm] = useState(empty)
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
 
   function handleChange(e) {
@@ -22,11 +19,11 @@ export default function Contact() {
       const res = await fetch('https://formspree.io/f/mvzjblpv', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, _subject: `Portfolio message from ${form.name}` }),
       })
       if (res.ok) {
         setStatus('sent')
-        setForm({ name: '', email: '', message: '' })
+        setForm(empty)
       } else {
         setStatus('error')
       }
@@ -36,92 +33,69 @@ export default function Contact() {
   }
 
   return (
-    <section className={styles.contact} id="contact">
-      <div className={styles.inner}>
+    <section className={`section ${styles.contact}`} id="contact" data-print="hide">
+      <div className="container">
+        <p className="eyebrow reveal"><b>05</b>Contact</p>
+        <h2 className={`${styles.title} reveal`}>
+          Have data that <br />needs a <em>story?</em>
+        </h2>
 
-        {/* Left — headline + links */}
-        <div className={styles.left}>
-          <p className="section-label">Contact</p>
-          <div className="section-divider" />
-          <h2 className={styles.title}>Let's work<br />together.</h2>
-          <p className={styles.desc}>
-            Need a data analyst, a developer or someone who can do both?
-            I'm open to internships, freelance projects and full-time roles.
-            Send a message and I'll get back to you.
-          </p>
+        <div className={styles.grid}>
+          <div className={`${styles.left} reveal`}>
+            <p className={styles.desc}>
+              Looking for a data analyst, a developer, or someone who can do both?
+              I'm open to full-time roles, internships and freelance projects. Send a
+              message and I'll get back to you.
+            </p>
 
-          <div className={styles.socials}>
-            {socialLinks.map((s, i) => (
-              <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                <div className={styles.icon}>{s.icon}</div>
-                <span>{s.label}</span>
-              </a>
-            ))}
+            <ul className={styles.socials}>
+              {socials.map(({ label, handle, href, Icon }) => (
+                <li key={label}>
+                  <a href={href} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                    <span className={styles.icon}><Icon size={17} /></span>
+                    <span className={styles.linkLabel}>{label}</span>
+                    <span className={styles.linkHandle}>{handle}</span>
+                    <ArrowUpRight size={16} />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
 
-        {/* Right — form */}
-        <div className={styles.right}>
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form className={`${styles.form} reveal`} style={{ '--delay': '120ms' }} onSubmit={handleSubmit}>
             <div className={styles.row}>
-              <div className={styles.field}>
-                <label className={styles.fieldLabel} htmlFor="name">Name</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  className={styles.input}
-                  placeholder="Your name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className={styles.field}>
-                <label className={styles.fieldLabel} htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  className={styles.input}
-                  placeholder="your@email.com"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              <label className={styles.field}>
+                <span>Name</span>
+                <input name="name" type="text" autoComplete="name" placeholder="Your name"
+                  value={form.name} onChange={handleChange} required />
+              </label>
+              <label className={styles.field}>
+                <span>Email</span>
+                <input name="email" type="email" autoComplete="email" placeholder="you@company.com"
+                  value={form.email} onChange={handleChange} required />
+              </label>
             </div>
-            <div className={styles.field}>
-              <label className={styles.fieldLabel} htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                className={styles.textarea}
-                placeholder="Tell me about your project or opportunity..."
-                rows={6}
-                value={form.message}
-                onChange={handleChange}
-                required
-              />
+            <label className={styles.field}>
+              <span>Message</span>
+              <textarea name="message" rows={5} placeholder="Tell me about your project or opportunity…"
+                value={form.message} onChange={handleChange} required />
+            </label>
+
+            {/* Honeypot — hidden from people, filled by bots */}
+            <input type="text" name="_gotcha" value={form._gotcha} onChange={handleChange}
+              className={styles.honeypot} tabIndex={-1} autoComplete="off" aria-hidden="true" />
+
+            <div className={styles.formFoot}>
+              <div aria-live="polite" className={styles.statusSlot}>
+                {status === 'sent' && <p className={styles.success}>Message sent. Thanks! I'll be in touch soon.</p>}
+                {status === 'error' && <p className={styles.error}>Something went wrong. Please try again, or reach me on LinkedIn.</p>}
+              </div>
+              <button type="submit" className="btn btn-primary" disabled={status === 'sending'}>
+                {status === 'sending' ? 'Sending…' : <>Send message <ArrowRight /></>}
+              </button>
             </div>
-
-            {status === 'sent' && (
-              <p className={styles.success}>Message sent! I'll get back to you soon.</p>
-            )}
-            {status === 'error' && (
-              <p className={styles.error}>Something went wrong. Please try again.</p>
-            )}
-
-            <button
-              type="submit"
-              className={`btn-primary ${styles.submitBtn}`}
-              disabled={status === 'sending'}
-            >
-              {status === 'sending' ? 'Sending…' : 'Send Message'}
-            </button>
           </form>
         </div>
-
       </div>
     </section>
   )

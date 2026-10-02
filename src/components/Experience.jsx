@@ -1,84 +1,80 @@
+import { useState } from 'react'
+import { experiences, monthsBetween, totalMonths, orgCount } from '../data'
+import SectionHead from './SectionHead'
+import { PlusIcon } from './icons'
 import styles from './Experience.module.css'
 
-const experiences = [
-  {
-    role: 'CRM Intern',
-    duration: 'Nov 2025 – Dec 2025',
-    org: 'iTrust Finance Ltd',
-    tags: ['Excel', 'CRM', 'Data Quality', 'KYC', 'Compliance'],
-    bullets: [
-      'Performed KYC (Know Your Customer) verification, reviewing and validating customer information.',
-      'Used CRM systems and Microsoft Excel to manage, track and update customer data.',
-      'Assisted in customer onboarding processes, ensuring accurate data collection and entry.',
-      'Checked and maintained data accuracy and consistency in customer records.',
-      'Identified and reported data issues, improving overall data quality and reliability.',
-      'Supported compliance processes by ensuring proper documentation and data validation.',
-    ],
-  },
-  {
-    role: 'Data Analyst Intern',
-    duration: 'Jul 2025 – Sep 2025',
-    org: 'Hebet Technologies Limited',
-    tags: ['Power BI', 'Excel', 'MySQL', 'R', 'Stata', 'Data Analysis'],
-    bullets: [
-      'Performed data entry, updating and data analysis using Microsoft Excel for database management.',
-      'Gained hands-on experience with data visualisation and analysis tools including Excel, Power BI, MySQL, R and Stata.',
-      'Collected data from customers using company software systems.',
-      'Conducted software testing, debugging and reported identified issues to the development team.',
-      'Participated in meetings and assisted in training customers on software usage.',
-    ],
-  },
-  {
-    role: 'Software Engineering Intern',
-    duration: 'Jul 2024 – Sep 2024',
-    org: 'Hebet Technologies Limited',
-    tags: ['React', 'Figma', 'Tailwind CSS', 'QA', 'Testing'],
-    bullets: [
-      'Designed mobile and web-based application interfaces (UI/UX) using Figma and other prototyping tools.',
-      'Participated in testing and quality assurance of mobile and web applications before deployment, documented test results and recommended improvements.',
-      'Developed frontend components using React and Tailwind CSS.',
-      'Attended official client-company meetings, engaging in discussions and presentations of User Requirements Documents (URDs).',
-    ],
-  },
-  {
-    role: 'Software Engineering Intern',
-    duration: 'Jul 2023 – Sep 2023',
-    org: 'College of Information and Communication Technology (CoICT) FINHUB — UDICTI',
-    tags: ['FinTech', 'React', 'JavaScript', 'HTML/CSS', 'Figma'],
-    bullets: [
-      'Explored FinTech problem-solving techniques, with a focus on innovation and digital financial solutions.',
-      'Gained hands-on experience in developing web-based applications using JavaScript, React, HTML and CSS.',
-      'Learned to design user-friendly UI/UX for mobile and web applications using Figma and other prototyping tools.',
-    ],
-  },
-]
+function Summary() {
+  return (
+    <dl className={styles.summary}>
+      <div><dt>Roles</dt><dd>{String(experiences.length).padStart(2, '0')}</dd></div>
+      <div><dt>Months</dt><dd>{totalMonths}</dd></div>
+      <div><dt>Organisations</dt><dd>{String(orgCount).padStart(2, '0')}</dd></div>
+    </dl>
+  )
+}
 
 export default function Experience() {
-  return (
-    <section className={styles.exp} id="experience">
-      <p className="section-label">Field experience</p>
-      <div className="section-divider" />
-      <h2 className="section-title">Where I've applied my skills.</h2>
+  // The current role starts open.
+  const [open, setOpen] = useState(() => new Set([0]))
+  const toggle = i => setOpen(prev => {
+    const next = new Set(prev)
+    next.has(i) ? next.delete(i) : next.add(i)
+    return next
+  })
 
-      <div className={styles.timeline}>
-        {experiences.map((e, i) => (
-          <div key={i} className={styles.item}>
-            <div className={styles.dot} />
-            <div className={styles.body}>
-              <div className={styles.header}>
-                <span className={styles.role}>{e.role}</span>
-                <span className={styles.duration}>{e.duration}</span>
-              </div>
-              <p className={styles.org}>{e.org}</p>
-              <div className={styles.tags}>
-                {e.tags.map(t => <span key={t} className={styles.tag}>{t}</span>)}
-              </div>
-              <ul className={styles.bullets}>
-                {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
-              </ul>
-            </div>
-          </div>
-        ))}
+  return (
+    <section className={`section ${styles.exp}`} id="experience">
+      <div className="container">
+        <SectionHead
+          index="02"
+          label="Experience"
+          title={<>Where I've done <em>the work.</em></>}
+          intro="Healthcare data operations today, built on four internships across FinTech, software engineering and financial services."
+          aside={<Summary />}
+        />
+
+        <ol className={styles.list}>
+          {experiences.map((e, i) => {
+            const isOpen = open.has(i)
+            const current = e.end === null
+            const id = `exp-${i}`
+            return (
+              <li key={`${e.role}-${e.start}`} className={`${styles.item} ${isOpen ? styles.open : ''} reveal`}
+                style={{ '--delay': `${i * 60}ms` }}>
+                <h3>
+                  <button className={styles.row} onClick={() => toggle(i)} aria-expanded={isOpen} aria-controls={id}>
+                    <span className={styles.date}>{e.duration}</span>
+                    <span className={styles.titleCol}>
+                      <span className={styles.role}>
+                        {e.role}
+                        {current && <span className={styles.current}><span className="live-dot" />Current</span>}
+                      </span>
+                      <span className={styles.org} title={e.orgFull}>{e.org}</span>
+                    </span>
+                    <span className={styles.meta}>
+                      <span className={styles.track}>{e.track}</span>
+                      <span className={styles.months}>{monthsBetween(e.start, e.end)} mo</span>
+                    </span>
+                    <span className={styles.toggle} aria-hidden="true"><PlusIcon /></span>
+                  </button>
+                </h3>
+                <div id={id} className={styles.panel} role="region" aria-label={`${e.role} at ${e.org}`}>
+                  <div className={styles.panelInner}>
+                    <div className={styles.body}>
+                      <ul className={styles.bullets}>
+                        {e.bullets.map(b => <li key={b}>{b}</li>)}
+                      </ul>
+                      <ul className={styles.tags} aria-label="Tools and skills">
+                        {e.tags.map(t => <li key={t} className="chip">{t}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            )
+          })}
+        </ol>
       </div>
     </section>
   )

@@ -1,17 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Godwin Tairo — Data Analyst based in Dar es Salaam, Tanzania. Skilled in Power BI, Python, SQL and Excel." />
-    <title>Godwin Tairo | Data Analyst</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+    <title>Godwin Tairo | Data Analyst &amp; Software Developer</title>
+    <meta name="description" content="Godwin Tairo is a Data Analyst and Software Developer from Dar es Salaam, Tanzania, currently a Data Operations Officer at New Living HealthCare Services. Power BI, Python, SQL, Excel and React." />
+    <meta name="author" content="Godwin Innocent Tairo" />
+    <meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4f3ee" media="(prefers-color-scheme: light)" />
+    <link rel="canonical" href="https://godwintairo.vercel.app/" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://godwintairo.vercel.app/" />
+    <meta property="og:title" content="Godwin Tairo | Data Analyst &amp; Software Developer" />
+    <meta property="og:description" content="I turn raw data into decisions. Data operations, dashboards and full-stack apps for healthcare, FinTech and financial services." />
+    <meta property="og:image" content="https://godwintairo.vercel.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Godwin Tairo, Data Analyst and Software Developer: I turn raw data into decisions." />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@GrowthGrid_105" />
+    <meta name="twitter:title" content="Godwin Tairo | Data Analyst &amp; Software Developer" />
+    <meta name="twitter:description" content="I turn raw data into decisions. Data operations, dashboards and full-stack apps for healthcare, FinTech and financial services." />
+    <meta name="twitter:image" content="https://godwintairo.vercel.app/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Godwin Innocent Tairo",
+        "jobTitle": "Data Operations Officer",
+        "worksFor": { "@type": "Organization", "name": "New Living HealthCare Services" },
+        "url": "https://godwintairo.vercel.app/",
+        "image": "https://godwintairo.vercel.app/profile.jpeg",
+        "address": { "@type": "PostalAddress", "addressLocality": "Dar es Salaam", "addressCountry": "TZ" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Dar es Salaam" },
+        "knowsAbout": ["Data Operations", "Data Migration", "Data Analysis", "Power BI", "Python", "SQL", "Excel", "React", "KYC", "Compliance"],
+        "sameAs": [
+          "https://www.linkedin.com/in/godwin-tairo-4977a727b",
+          "https://github.com/godwin105",
+          "https://x.com/GrowthGrid_105"
+        ]
+      }
+    </script>
+
+    <!-- Apply the saved / system theme before first paint to avoid a flash -->
+    <script>
+      (function () {
+        var t = null
+        try { t = localStorage.getItem('theme') } catch (e) {}
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        }
+        document.documentElement.setAttribute('data-theme', t)
+        document.documentElement.classList.add('js')
+      })()
+    </script>
+
+    <link rel="preload" as="image" type="image/webp" imagesrcset="/profile-480.webp 480w, /profile-960.webp 960w" imagesizes="(max-width: 1000px) 280px, 360px" media="(min-width: 721px)" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
+    <noscript>
+      <p style="padding:2rem;font-family:sans-serif">Godwin Tairo — Data Analyst &amp; Software Developer, Dar es Salaam. Please enable JavaScript to view this portfolio.</p>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,193 +1,152 @@
-.about {
-  padding: 5rem 4rem;
-  background: var(--surface);
-}
+.grid { display: block; }
 
-/* ── Top: bio + photo ── */
-.grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 5rem;
-  align-items: start;
+.statement {
+  font-size: clamp(1.7rem, 3.6vw, 3rem);
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.035em;
+  max-width: 1080px;
 }
-
-.text {
-  color: var(--muted);
-  line-height: 1.9;
-  margin-bottom: 1.2rem;
-  font-size: 0.97rem;
+.statement span {
+  color: var(--unlit);
+  transition: color 0.35s ease;
 }
-.quote {
-  border-left: 2px solid var(--teal);
-  padding-left: 1.25rem;
-  margin: 2rem 0;
-  font-size: 1rem;
-  color: var(--text);
+.statement span.lit { color: var(--text); }
+.statement span.accentWord {
+  font-family: var(--serif);
   font-style: italic;
-  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
-.infoGrid { display: grid; gap: 0.85rem; margin-top: 2rem; }
-.infoRow { display: flex; gap: 1rem; align-items: flex-start; font-size: 0.85rem; }
-.infoKey {
-  color: var(--teal);
-  min-width: 110px;
+.statement span.accentWord.lit { color: var(--accent); }
+
+.photoMobile { display: none; }
+
+/* ── Pillars ── */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 3.5rem;
+}
+.pillar {
+  position: relative;
+  padding: 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.4s var(--ease);
+}
+.pillar::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease);
+}
+.pillar:hover { border-color: var(--line-2); transform: translateY(-4px); }
+.pillar:hover::after { transform: scaleX(1); }
+.pillarTop { display: flex; justify-content: space-between; align-items: center; }
+.pillarIcon {
+  display: grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.pillarNum { font-family: var(--mono); font-size: 0.75rem; color: var(--faint); }
+.pillarTitle { margin: 2.5rem 0 0.6rem; font-size: 1.9rem; letter-spacing: -0.04em; }
+.pillarText { color: var(--muted); font-size: 0.95rem; line-height: 1.65; }
+
+/* ── Lower: info + education ── */
+.lower {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 4rem;
+  margin-top: 4rem;
+}
+.subhead {
+  font-family: var(--mono);
+  font-size: 0.74rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.72rem;
+  color: var(--faint);
+  margin-bottom: 1rem;
 }
-.infoVal { color: var(--muted); }
+.subheadGap { margin-top: 2.5rem; }
 
-/* ── Photo ── */
-.photoWrap {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-.photo {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  object-position: top center;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-  display: block;
-  filter: grayscale(20%);
-  transition: filter 0.3s;
-}
-.photo:hover { filter: grayscale(0%); }
-.photoBadge {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.9rem;
-  background: rgba(4,19,26,0.85);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--teal);
-}
-.badgeDot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--teal);
-  animation: pulse 2s infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-/* ── Education ── */
-.eduSection {
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--border);
-}
-
-.eduGrid {
+.infoRow {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-}
-
-.eduCard {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 1.5rem;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.eduCard:hover { border-color: var(--teal); transform: translateY(-3px); }
-.eduCard::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 3px; height: 100%;
-  background: var(--teal);
-}
-
-.eduYear {
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: var(--teal);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-.eduSchool {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.4rem;
-  line-height: 1.3;
-}
-.eduDegree {
-  font-size: 0.8rem;
-  color: var(--muted);
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
-}
-.eduNote {
-  font-size: 0.72rem;
-  color: var(--teal);
-  opacity: 0.7;
-  letter-spacing: 0.05em;
-}
-
-/* ── Interests ── */
-.interestsSection {
-  margin-top: 2.5rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--border);
-}
-
-.interestsGrid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 130px 1fr;
   gap: 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.infoRow:last-child { border-bottom: 1px solid var(--line); }
+.infoRow dt { color: var(--faint); }
+.infoRow dd { color: var(--text); }
+
+.interests { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.interests li:hover { color: var(--text); border-color: var(--text); }
+
+.edu li {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 1.25rem;
+  align-items: baseline;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--line);
+  transition: padding 0.3s var(--ease), background 0.3s;
+}
+.edu li:last-child { border-bottom: 1px solid var(--line); }
+.edu li:hover { padding-left: 0.75rem; }
+.eduYear { font-family: var(--mono); font-size: 0.78rem; color: var(--faint); }
+.eduSchool { font-size: 1.1rem; font-weight: 500; letter-spacing: -0.02em; }
+.eduDegree { font-size: 0.9rem; color: var(--muted); margin-top: 0.15rem; }
+.eduNote { font-family: var(--mono); font-size: 0.72rem; color: var(--faint); white-space: nowrap; }
+.eduCurrent .eduYear, .eduCurrent .eduNote { color: var(--accent); }
+
+@media (max-width: 1000px) {
+  .lower { grid-template-columns: 1fr; gap: 3rem; }
+}
+@media (max-width: 720px) {
+  .photoMobile {
+    display: block;
+    max-width: 280px;
+    margin: 0 auto 2.5rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .photoMobile img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; }
+  .pillars { grid-template-columns: 1fr; margin-top: 3.5rem; }
+  .pillarTitle { margin-top: 1.5rem; }
+  .infoRow { grid-template-columns: 1fr; gap: 0.15rem; }
+  .edu li { grid-template-columns: 1fr; gap: 0.25rem; }
+  .eduNote { white-space: normal; }
 }
 
-.interestCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 1.25rem 1rem;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  text-align: center;
-  transition: border-color 0.2s, transform 0.2s;
-  cursor: default;
-}
-.interestCard:hover { border-color: var(--gold); transform: translateY(-3px); }
-
-.interestEmoji { font-size: 1.6rem; line-height: 1; }
-
-.interestLabel {
-  font-size: 0.75rem;
-  color: var(--muted);
-  line-height: 1.4;
-}
-
-@media (max-width: 1100px) {
-  .eduGrid { grid-template-columns: repeat(2, 1fr); }
-  .interestsGrid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 900px) {
-  .about { padding: 4rem 1.5rem; }
-  .grid { grid-template-columns: 1fr; gap: 3rem; }
-  .eduGrid { grid-template-columns: repeat(2, 1fr); }
-  .interestsGrid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 500px) {
-  .eduGrid { grid-template-columns: 1fr; }
-  .interestsGrid { grid-template-columns: repeat(2, 1fr); }
+@media print {
+  .statement { font-size: 11pt; line-height: 1.4; letter-spacing: -0.01em; max-width: none; }
+  .statement span { color: var(--text) !important; }
+  .pillars { grid-template-columns: repeat(3, 1fr); gap: 6pt; margin-top: 10pt; }
+  .pillar { padding: 7pt 9pt; border-radius: 6pt; break-inside: avoid; }
+  .pillarTop { display: none; }
+  .pillarTitle { margin: 0 0 2pt; font-size: 11pt; }
+  .pillarText { font-size: 8.5pt; }
+  .lower { grid-template-columns: 1fr 1.2fr; gap: 18pt; margin-top: 12pt; }
+  .subhead { margin-bottom: 4pt; }
+  .subheadGap { margin-top: 10pt; }
+  .infoRow { grid-template-columns: 80pt 1fr; padding: 3pt 0; font-size: 8.5pt; }
+  .edu li { grid-template-columns: 70pt 1fr auto; padding: 4pt 0; gap: 8pt; break-inside: avoid; }
+  .edu li:hover { padding-left: 0; }
+  .eduSchool { font-size: 9.5pt; }
+  .eduDegree { font-size: 8.5pt; }
 }

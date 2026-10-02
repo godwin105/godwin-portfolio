@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="4" fill="#04131a"/>
-  <text x="5" y="23" font-family="sans-serif" font-weight="800" font-size="18" fill="#0dd4b0">GT</text>
+  <rect width="32" height="32" rx="8" fill="#0a0b0d"/>
+  <rect x="7" y="17" width="4" height="8" rx="1.5" fill="#3ee6b0" opacity="0.55"/>
+  <rect x="14" y="12" width="4" height="13" rx="1.5" fill="#3ee6b0" opacity="0.8"/>
+  <rect x="21" y="7" width="4" height="18" rx="1.5" fill="#3ee6b0"/>
 </svg>

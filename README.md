@@ -2,7 +2,7 @@
 
 My personal portfolio - Godwin Innocent Tairo, Data Analyst based in Dar es Salaam, Tanzania.
 
-Built with **React + Vite** and CSS Modules. Dark, minimal aesthetic.
+Built with **React + Vite** and CSS Modules. Editorial "data journal" design with light and dark themes.
 
 ---
 
@@ -23,6 +23,13 @@ Open http://localhost:5173 in your browser.
 ```bash
 npm run build
 ```
+The build also **pre-renders** the page (`src/entry-server.jsx` → `scripts/prerender.mjs`), so `dist/index.html` contains the full content before JavaScript loads. Good for speed, SEO, link previews and no-JS visitors. `npm run dev` skips this.
+
+### Features worth knowing
+- **Download CV**: the hero button prints the page. A print stylesheet turns it into a clean light CV, so choose *Save as PDF*. Hide anything from the CV with `data-print="hide"`; show print-only content with `className="print-only"`.
+- **Command palette**: Ctrl/⌘ + K (or the search button in the nav) jumps to sections, projects and links. Commands live in `src/components/CommandPalette.jsx`.
+- **Themes**: light and dark, remembered per visitor. Tokens for both are in `src/index.css`.
+- **Share card**: `public/og-image.jpg` (1200×630) is what LinkedIn, X and WhatsApp show. Regenerate it if your role or photo changes.
 
 ---
 
@@ -31,28 +38,39 @@ npm run build
 ```
 src/
   components/
-    Nav.jsx / Nav.module.css          ← Fixed navigation bar
-    Hero.jsx / Hero.module.css        ← Landing section
-    About.jsx / About.module.css      ← Bio, info, education
-    Skills.jsx / Skills.module.css    ← Skill chips + proficiency bars
-    Experience.jsx / Experience.module.css  ← Work timeline
-    Projects.jsx / Projects.module.css      ← Project cards
-    Contact.jsx / Contact.module.css        ← Contact links + cards
-    Footer.jsx / Footer.module.css          ← Footer
+    Nav.jsx          ← Floating pill nav: active section, scroll progress, theme toggle, mobile menu
+    Hero.jsx         ← Name, portrait and bento tiles (career chart, stats, live Dar es Salaam clock)
+    Marquee.jsx      ← Scrolling band of tools
+    About.jsx        ← Scroll-lit statement, what I do, at a glance, education, interests
+    Experience.jsx   ← Expandable timeline (current role opens by default)
+    Projects.jsx     ← Filterable project cards
+    ProjectArt.jsx   ← Generated cover illustration for each project
+    Skills.jsx       ← Skill groups as rows
+    Contact.jsx      ← Social links + Formspree contact form (with spam honeypot)
+    Footer.jsx       ← Wordmark, socials, back to top
+    CommandPalette.jsx ← Ctrl/⌘+K quick navigation
+    SectionHead.jsx  ← Shared numbered section header
+    icons.jsx        ← Shared SVG icons and social links
+  data.js       ← All content: experience, skills, projects, education, interests, marquee tools
+  hooks.js      ← Scroll reveal, active section, count-up, theme, clock, scroll progress
   App.jsx       ← Assembles all sections
-  main.jsx      ← React entry point
-  index.css     ← Global styles & design tokens
+  entry-server.jsx ← Build-time pre-render entry
+  index.css     ← Design tokens (both themes), global styles, buttons, chips
+public/
+  robots.txt, sitemap.xml, favicon, profile photo
 ```
+
+Add `className="reveal"` to any element to fade it in on scroll (optional `style={{ '--delay': '100ms' }}`).
 
 ---
 
-## Customisation Checklist
+## Updating content
 
-- [ ] **Projects** — Replace the sample projects in `Projects.jsx` with your real ones. Add GitHub/live demo links.
-- [ ] **LinkedIn & GitHub** — Update the URLs in `Contact.jsx`.
-- [ ] **Proficiency bars** — Adjust the `pct` values in `Skills.jsx` to match your honest self-assessment.
-- [ ] **Photo** — Add a profile photo to the About section if desired (add an `<img>` in `About.jsx`).
-- [ ] **Meta description** — Update `index.html` with your real description.
+- **New job or internship** → add it to `experiences` in `src/data.js` with `type: 'job'` or `'internship'`. Use `end: null` for a current role (its months count up automatically). The hero chart, stats and "Now" badge update themselves.
+- **New skill** → add it to `skillGroups` in `src/data.js`.
+- **New project** → add it to `projects` in `src/data.js` with `categories` (`data`, `web3`, `web`) and an `art` style (`bars`, `chain`, `hash`, `radar`, `scatter`, `window`).
+- **Social links** → `socials` in `src/components/icons.jsx`.
+- **Domain** → if the site moves from godwintairo.vercel.app, update the URLs in `index.html`, `public/robots.txt` and `public/sitemap.xml`.
 
 ---
 
@@ -72,15 +90,17 @@ Every push to `main` will auto-deploy.
 
 ---
 
-## Design Tokens (CSS Variables in `index.css`)
+## Design tokens (`src/index.css`)
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--bg` | `#04131a` | Page background |
-| `--surface` | `#071e29` | Section backgrounds |
-| `--teal` | `#0dd4b0` | Primary accent |
-| `--gold` | `#e8b84b` | Secondary accent |
-| `--text` | `#e8f0f0` | Primary text |
-| `--muted` | `rgba(...)` | Subdued text |
+Dark values live on `:root`, light values on `:root[data-theme='light']`. The main ones:
 
-To change the colour scheme, edit these variables in `src/index.css`.
+| Token | Dark | Light | Usage |
+|-------|------|-------|-------|
+| `--bg` | `#0a0b0d` | `#f4f3ee` | Page background |
+| `--card` | `#121418` | `#ffffff` | Cards and tiles |
+| `--text` | `#f2f2ee` | `#0e1012` | Primary text |
+| `--muted` | `#a3a7ae` | `#50555d` | Secondary text |
+| `--accent` | `#3ee6b0` | `#067a5a` | Mint accent |
+| `--amber` | `#f5b54a` | `#9a5b00` | Secondary accent |
+
+Fonts: Geist (text), Instrument Serif italic (accents), Geist Mono (labels), all from Google Fonts.
