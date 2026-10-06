@@ -16,7 +16,7 @@ const info = [
   { key: 'Based in', val: 'Dar es Salaam, Tanzania' },
   { key: 'Languages', val: 'English & Swahili' },
   { key: 'Focus', val: 'Data analysis · Software development · IT systems · Audit & compliance' },
-  { key: 'Availability', val: 'Open to full-time & internship roles' },
+  { key: 'Availability', val: 'Open to full-time roles & freelance projects' },
 ]
 
 const pillars = [

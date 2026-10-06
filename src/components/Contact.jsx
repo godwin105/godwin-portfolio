@@ -51,7 +51,7 @@ export default function Contact() {
             <p className={styles.desc}>
               Whether you need data analysed, a web app built, IT systems and networks
               set up, or records checked for accuracy and compliance, I'm open to
-              full-time roles, internships and freelance projects. Send a message and
+              full-time roles and freelance projects. Send a message and
               I'll get back to you.
             </p>
 

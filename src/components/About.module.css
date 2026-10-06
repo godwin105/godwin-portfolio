@@ -111,7 +111,7 @@
 .eduSchool { font-size: 1.1rem; font-weight: 500; letter-spacing: -0.02em; }
 .eduDegree { font-size: 0.9rem; color: var(--muted); margin-top: 0.15rem; }
 .eduNote { font-family: var(--mono); font-size: 0.72rem; color: var(--faint); white-space: nowrap; }
-.eduLatest .eduYear, .eduLatest .eduNote { color: var(--accent); }
+.eduLatest .eduYear { color: var(--accent); }
 
 @media (max-width: 1000px) {
   .lower { grid-template-columns: 1fr; gap: 3rem; }
