@@ -213,7 +213,7 @@ export const projects = [
 ]
 
 export const education = [
-  { year: '2022 – Present', school: 'University of Dar es Salaam', degree: 'BSc Computer Engineering & Information Technology', note: 'Expected Nov 2026', current: true },
+  { year: '2022 – 2026', school: 'University of Dar es Salaam', degree: 'BSc Computer Engineering & Information Technology', note: 'Graduated Jul 2026', latest: true },
   { year: '2020 – 2022', school: 'Ndanda Boys High School', degree: 'Advanced Certificate of Secondary Education (ACSEE)', note: 'Mtwara' },
   { year: '2016 – 2019', school: 'Dar es Salaam Secondary School', degree: 'Certificate of Secondary Education (CSEE)', note: 'Dar es Salaam' },
   { year: '2009 – 2015', school: 'Diamond Primary School', degree: 'Primary School Leaving Examination (PSLE)', note: 'Dar es Salaam' },

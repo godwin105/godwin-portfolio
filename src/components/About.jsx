@@ -12,9 +12,10 @@ const accentWords = new Set(['useful,', 'running.'])
 
 const info = [
   { key: 'Current role', val: `${currentRole.role}, ${currentRole.org}` },
+  { key: 'Degree', val: 'BSc Computer Engineering & IT, University of Dar es Salaam (2026)' },
   { key: 'Based in', val: 'Dar es Salaam, Tanzania' },
   { key: 'Languages', val: 'English & Swahili' },
-  { key: 'Focus', val: 'Data analysis · Software development · Auditing' },
+  { key: 'Focus', val: 'Data analysis · Software development · IT systems · Audit & compliance' },
   { key: 'Availability', val: 'Open to full-time & internship roles' },
 ]
 
@@ -116,7 +117,7 @@ export default function About() {
             <h3 className={styles.subhead}>Education</h3>
             <ol className={styles.edu}>
               {education.map(e => (
-                <li key={e.school} className={e.current ? styles.eduCurrent : ''}>
+                <li key={e.school} className={e.latest ? styles.eduLatest : ''}>
                   <span className={styles.eduYear}>{e.year}</span>
                   <div>
                     <p className={styles.eduSchool}>{e.school}</p>

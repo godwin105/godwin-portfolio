@@ -12,7 +12,7 @@ export default function Skills() {
           index="04"
           label="Toolkit"
           title={<>Data, dev, audit <em>&amp; ops.</em></>}
-          intro="Tools and practices I use at work, and have used in internships, coursework and my own projects."
+          intro="Tools and practices I use at work, and have used in internships, my degree and my own projects."
           aside={<p className={styles.total}><span>{total}</span>skills across {skillGroups.length} domains</p>}
         />
 
